@@ -3,13 +3,15 @@
     "displayName": "TeamCity Checker",
     "description": "Checks the build status of the current Git repository, if the workspace is part of one.",
     "version": "0.0.1",
-    "publisher": "Martin Svedén",
+    "author": "Martin Svedén",
+    "publisher": "msveden",
     "engines": {
         "vscode": "^1.11.0"
     },
     "categories": [
         "Other"
     ],
+    "icon": "images/icon.png",
     "activationEvents": [
         "*"
     ],
