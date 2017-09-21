@@ -19,6 +19,11 @@
             "type": "object",
             "title": "TeamCity Checker",
             "properties": {
+                "teamcity_checker.baseUrl": {
+                    "type": "string",
+                    "default": "http://tc",
+                    "description": "The base url for TeamCity"
+                },
                 "teamcity_checker.username": {
                     "type": "string",
                     "default": "",
