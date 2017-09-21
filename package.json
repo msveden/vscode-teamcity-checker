@@ -1,0 +1,58 @@
+{
+    "name": "teamcity-checker",
+    "displayName": "TeamCity Checker",
+    "description": "Checks the build status of the current Git repository, if the workspace is part of one.",
+    "version": "0.0.1",
+    "publisher": "Martin Svedén",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./src/extension",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "TeamCity Checker",
+            "properties": {
+                "teamcity_checker.username": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The username to use for authentication"
+                },
+                "teamcity_checker.password": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The password to use for authentication"
+                },
+                "teamcity_checker.interval": {
+                    "default": 10000,
+                    "description": "The interval between checks in milliseconds"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.5.2",
+        "vscode": "^1.1.5",
+        "mocha": "^3.5.0",
+        "eslint": "^4.6.1",
+        "@types/node": "^7.0.0",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "find-parent-dir": "^0.3.0",
+        "lodash": "^4.17.4",
+        "moment": "^2.18.1",
+        "promise": "^8.0.1",
+        "request": "^2.82.0"
+    }
+}
