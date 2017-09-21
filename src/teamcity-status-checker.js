@@ -17,7 +17,7 @@ module.exports.check = (teamCityBaseUrl, repoName, branchName, username, passwor
     request.get(options, (error, response, body) => {
         let text = '';
         if (error) {
-            text = '';
+            text = 'Error when trying to access TeamCity: ' + error;
         }
         else if (response.statusCode === 404) {
             text = 'Could not find build status for ' + branchName;
