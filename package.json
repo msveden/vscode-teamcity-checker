@@ -2,7 +2,7 @@
     "name": "teamcity-checker",
     "displayName": "TeamCity Checker",
     "description": "Checks the build status of the current Git repository, if the workspace is part of one.",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "author": "Martin Svedén",
     "publisher": "msveden",
     "engines": {
