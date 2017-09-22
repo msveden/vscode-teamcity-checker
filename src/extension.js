@@ -7,12 +7,14 @@ var interval = null;
 
 function onWorkspaceFolderChange(newWorkspaceFolder) {
     let config = vscode.workspace.getConfiguration('teamcity_checker');
-    branchResolver.resolveBranchName(workspaceFolder, (repoName, branchName) => {
-        const check = () => { teamCityStatusChecker.check(config.baseUrl, repoName, branchName, config.username, config.password) };
-        clearInterval(interval);
-        interval = setInterval(check, config.interval);
-        check();
-    });
+    const check = () => { 
+        branchResolver.resolveBranchName(workspaceFolder, (repoName, branchName) => {
+            teamCityStatusChecker.check(config.baseUrl, repoName, branchName, config.username, config.password) 
+        });        
+    };
+    clearInterval(interval);
+    interval = setInterval(check, config.interval);
+    check();
 }
 
 function activate(context) {
