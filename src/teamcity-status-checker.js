@@ -5,7 +5,7 @@ var request = require('request');
 let statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
 
 module.exports.check = (teamCityBaseUrl, repoName, branchName, username, password) => {
-    var url = teamCityBaseUrl + '/app/rest/builds?locator=defaultFilter:false&fields=build(branchName,status,properties(property),finishDate)';
+    var url = teamCityBaseUrl + '/app/rest/builds?locator=defaultFilter:false,count:200&fields=build(branchName,status,properties(property),finishDate)';
 
     var options = {
         url: url,
